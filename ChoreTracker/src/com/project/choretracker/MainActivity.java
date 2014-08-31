@@ -21,11 +21,11 @@ public class MainActivity extends Activity {
 		setContentView( R.layout.activity_main  );
 		MainFragment fragment = new MainFragment();
 		
-		TextView text = new TextView( this );
-		text.setText( "blah" );
-		text.setVisibility( View.VISIBLE );
-		text.setTextColor( ColorStateList.valueOf( 0 ) );
-		fragment.addViewTab( text );
+//		TextView text = new TextView( this );
+//		text.setText( "blah" );
+//		text.setVisibility( View.VISIBLE );
+//		text.setTextColor( ColorStateList.valueOf( 0 ) );
+//		fragment.addViewTab( text );
 		
 		if ( savedInstanceState == null ) {
 			getFragmentManager().beginTransaction()
