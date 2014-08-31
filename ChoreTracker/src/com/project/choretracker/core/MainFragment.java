@@ -1,4 +1,7 @@
-package com.project.choretracker;
+package com.project.choretracker.core;
+
+import com.project.choretracker.R;
+import com.project.choretracker.R.layout;
 
 import android.app.Fragment;
 import android.os.Bundle;

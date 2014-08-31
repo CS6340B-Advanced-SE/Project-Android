@@ -1,4 +1,9 @@
-package com.project.choretracker;
+package com.project.choretracker.core;
+
+import com.project.choretracker.R;
+import com.project.choretracker.R.id;
+import com.project.choretracker.R.layout;
+import com.project.choretracker.R.menu;
 
 import android.app.ActionBar.TabListener;
 import android.app.Activity;
@@ -8,6 +13,11 @@ import android.app.FragmentTransaction;
 import android.app.ActionBar.Tab;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,8 +26,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.os.Build;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 
+	ChoreTrackFragmentAdapter pagerAdapter;
+	ViewPager viewPager;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate( savedInstanceState );
@@ -27,6 +40,11 @@ public class MainActivity extends Activity {
 		ActionBar actionBar = this.getActionBar();
 		actionBar.setNavigationMode( ActionBar.NAVIGATION_MODE_TABS );
 		initActionBarTabs();
+		
+		pagerAdapter = new ChoreTrackFragmentAdapter( getSupportFragmentManager() );
+		
+		viewPager = (ViewPager) findViewById( R.id.pager );
+		viewPager.setAdapter( pagerAdapter );
 		
 		if ( savedInstanceState == null ) {
 			getFragmentManager().beginTransaction()
