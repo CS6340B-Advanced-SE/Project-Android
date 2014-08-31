@@ -1,8 +1,11 @@
 package com.project.choretracker;
 
+import android.app.ActionBar.TabListener;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
+import android.app.ActionBar.Tab;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,16 +24,13 @@ public class MainActivity extends Activity {
 		setContentView( R.layout.activity_main  );
 		MainFragment fragment = new MainFragment();
 		
-//		TextView text = new TextView( this );
-//		text.setText( "blah" );
-//		text.setVisibility( View.VISIBLE );
-//		text.setTextColor( ColorStateList.valueOf( 0 ) );
-//		fragment.addViewTab( text );
+		ActionBar actionBar = this.getActionBar();
+		actionBar.setNavigationMode( ActionBar.NAVIGATION_MODE_TABS );
+		initActionBarTabs();
 		
 		if ( savedInstanceState == null ) {
 			getFragmentManager().beginTransaction()
 					.add( R.id.container, fragment ).commit();
-			
 		}
 	}
 
@@ -51,5 +51,94 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public void initActionBarTabs() {
+		ActionBar actionBar = getActionBar();
+		
+		actionBar.addTab( initHomeTab(), 0, true );
+		actionBar.addTab( initCalendarTab(), 1, false );
+		actionBar.addTab( initRewardsTab(), 2, false );
+	}
+	
+	public Tab initHomeTab() {
+		ActionBar actionBar = getActionBar();
+		
+		Tab tab = actionBar.newTab().setText( "Home" ).setTabListener( new TabListener() {
+
+			@Override
+			public void onTabReselected(Tab tab, FragmentTransaction ft) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onTabSelected(Tab tab, FragmentTransaction ft) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+				// TODO Auto-generated method stub
+				
+			} 
+		});
+		
+		return tab;
+	}
+	
+	public Tab initCalendarTab() {
+		ActionBar actionBar = getActionBar();
+		
+		Tab tab = actionBar.newTab().setText( "Calendar" ).setTabListener( new TabListener() {
+
+			@Override
+			public void onTabReselected(Tab tab, FragmentTransaction ft) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onTabSelected(Tab tab, FragmentTransaction ft) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+				// TODO Auto-generated method stub
+				
+			} 
+		});
+		
+		return tab;
+	}
+	
+	public Tab initRewardsTab() {
+		ActionBar actionBar = getActionBar();
+		
+		Tab tab = actionBar.newTab().setText( "Rewards" ).setTabListener( new TabListener() {
+
+			@Override
+			public void onTabReselected(Tab tab, FragmentTransaction ft) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onTabSelected(Tab tab, FragmentTransaction ft) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+				// TODO Auto-generated method stub
+				
+			} 
+		});
+		
+		return tab;
 	}
 }
