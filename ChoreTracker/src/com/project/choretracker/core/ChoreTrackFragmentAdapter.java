@@ -1,12 +1,13 @@
 package com.project.choretracker.core;
 
 import com.project.choretracker.core.views.fragments.HomeObjectFragment;
+import com.project.choretracker.core.views.fragments.RewardsObjectFragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentPagerAdapter;
 
-public class ChoreTrackFragmentAdapter extends FragmentStatePagerAdapter{
+public class ChoreTrackFragmentAdapter extends FragmentPagerAdapter{
 
 	public ChoreTrackFragmentAdapter( FragmentManager fm ) {
 		super( fm );
@@ -14,14 +15,24 @@ public class ChoreTrackFragmentAdapter extends FragmentStatePagerAdapter{
 
 	@Override
 	public Fragment getItem( int index ) {
-		Fragment fragment = new HomeObjectFragment();
+		Fragment fragment = null;
+		
+		if ( index == 0 ) {
+			fragment = new HomeObjectFragment();
+		}
+		else if( index == 1 ) {
+			fragment = new RewardsObjectFragment();
+		}
+		else {
+			//TODO log error that no fragment exists at this index and that index is out of range.
+		}
 		
 		return fragment;
 	}
 
 	@Override
 	public int getCount() {
-		return 0;
+		return 2;
 	}
 
 }

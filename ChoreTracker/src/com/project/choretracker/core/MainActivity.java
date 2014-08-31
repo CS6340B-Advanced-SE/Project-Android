@@ -1,30 +1,16 @@
 package com.project.choretracker.core;
 
 import com.project.choretracker.R;
-import com.project.choretracker.R.id;
-import com.project.choretracker.R.layout;
-import com.project.choretracker.R.menu;
 
 import android.app.ActionBar.TabListener;
-import android.app.Activity;
 import android.app.ActionBar;
-import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.ActionBar.Tab;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.os.Build;
 
 public class MainActivity extends FragmentActivity {
 
@@ -34,22 +20,38 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate( savedInstanceState );
-		setContentView( R.layout.activity_main  );
-		MainFragment fragment = new MainFragment();
+		setContentView( R.layout.fragment_main  );
 		
 		ActionBar actionBar = this.getActionBar();
 		actionBar.setNavigationMode( ActionBar.NAVIGATION_MODE_TABS );
 		initActionBarTabs();
-		
+
 		pagerAdapter = new ChoreTrackFragmentAdapter( getSupportFragmentManager() );
 		
 		viewPager = (ViewPager) findViewById( R.id.pager );
+
 		viewPager.setAdapter( pagerAdapter );
 		
-		if ( savedInstanceState == null ) {
-			getFragmentManager().beginTransaction()
-					.add( R.id.container, fragment ).commit();
-		}
+		/**
+         * on swiping the viewpager make respective tab selected
+         * */
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+ 
+            @Override
+            public void onPageSelected(int position) {
+                // on changing the page
+                // make respected tab selected
+                getActionBar().setSelectedNavigationItem( position );
+            }
+ 
+            @Override
+            public void onPageScrolled(int arg0, float arg1, int arg2) {
+            }
+ 
+            @Override
+            public void onPageScrollStateChanged(int arg0) {
+            }
+        });
 	}
 
 	@Override
@@ -75,8 +77,8 @@ public class MainActivity extends FragmentActivity {
 		ActionBar actionBar = getActionBar();
 		
 		actionBar.addTab( initHomeTab(), 0, true );
-		actionBar.addTab( initCalendarTab(), 1, false );
-		actionBar.addTab( initRewardsTab(), 2, false );
+//		actionBar.addTab( initCalendarTab(), 1, false );
+		actionBar.addTab( initRewardsTab(), 1, false );
 	}
 	
 	public Tab initHomeTab() {

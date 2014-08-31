@@ -1,6 +1,6 @@
 package com.project.choretracker.core.views.fragments;
 
-import android.R;
+import com.project.choretracker.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ public class HomeObjectFragment extends Fragment{
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-		View rootView = inflater.inflate( R.layout.list_content, container, false );
+		View rootView = inflater.inflate( R.layout.chore_tracker_home, container, false );
 		
 		return rootView;
 	}
