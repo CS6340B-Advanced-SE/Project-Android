@@ -16,5 +16,20 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="CustomActionBarTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+    </style>
+    
+    <!-- ActionBar styles -->
+    
+    <style name="ActionBar" parent="CustomActionBarTheme">
+        <item name="android:background">@color/testColor</item>
+    </style>
+    
+    <!-- ActionBar Tab styles -->
+    <style name="MyActionBarTabTextStyle" parent="android:style/Theme.Holo.Light">
+     <item name="android:background">@color/testColor</item>
+	</style>
 
 </resources>

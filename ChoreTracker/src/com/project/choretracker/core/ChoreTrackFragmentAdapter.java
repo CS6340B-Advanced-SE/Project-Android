@@ -1,5 +1,6 @@
 package com.project.choretracker.core;
 
+import com.project.choretracker.core.views.fragments.CalendarObjectFragment;
 import com.project.choretracker.core.views.fragments.HomeObjectFragment;
 import com.project.choretracker.core.views.fragments.RewardsObjectFragment;
 
@@ -23,6 +24,9 @@ public class ChoreTrackFragmentAdapter extends FragmentPagerAdapter{
 		else if( index == 1 ) {
 			fragment = new RewardsObjectFragment();
 		}
+		else if( index == 2 ) {
+			fragment = new CalendarObjectFragment();
+		}
 		else {
 			//TODO log error that no fragment exists at this index and that index is out of range.
 		}
@@ -32,7 +36,7 @@ public class ChoreTrackFragmentAdapter extends FragmentPagerAdapter{
 
 	@Override
 	public int getCount() {
-		return 2;
+		return 3;
 	}
 
 }
