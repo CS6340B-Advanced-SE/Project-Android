@@ -25,11 +25,16 @@ public class AuthenticationActivity extends FragmentActivity {
 		getFragmentManager().beginTransaction().add( authFrag, "authFrag" ).commit();
 	}
 	
+	
 	public void onAcceptClicked( View v ) {
 		SharedPreferences pref = getApplicationContext().getSharedPreferences( "choreTrackerPref",  MODE_PRIVATE );
 		SharedPreferences.Editor editor = pref.edit();
 		editor.putBoolean( "loggedOn", true );
 		editor.commit();
 		authFrag.onAcceptClicked( v );
+	}
+	
+	public void onParentClicked( View v ) {
+		authFrag.onParentClicked( v );
 	}
 }

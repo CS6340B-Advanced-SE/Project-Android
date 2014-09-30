@@ -24,4 +24,41 @@
         android:hapticFeedbackEnabled="true"
         android:text="Accept" />
 
+    <ImageButton
+        android:id="@+id/parentButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/button1"
+        android:src="@android:drawable/btn_star"
+        android:clickable="true"
+        android:onClick="onParentClicked"
+        android:hapticFeedbackEnabled="true"
+        />
+
+    <ImageButton
+        android:id="@+id/childButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/button1"
+        android:src="@android:drawable/btn_star" />
+
+	<TextView
+	    android:id="@+id/childTextView"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignLeft="@+id/childButton"
+	    android:layout_below="@+id/childButton"
+	    android:text="Child" />
+
+	<TextView
+	    android:id="@+id/parentTextView"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBaseline="@+id/childTextView"
+	    android:layout_alignBottom="@+id/childTextView"
+	    android:layout_alignLeft="@+id/parentButton"
+	    android:text="Parent" />
+
 </RelativeLayout>
