@@ -30,6 +30,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.project.choretracker.core.MainActivity"/>
         </activity>
+          <activity
+            android:name="com.project.choretracker.authentication.ChildListActivity"
+            android:parentActivityName="com.project.choretracker.authentication.AuthenticationActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.project.choretracker.authentication.AuthenticationActivity"/>
+        </activity>
     </application>
 
 </manifest>

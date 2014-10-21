@@ -29,30 +29,34 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000b;
+        public static final int action_settings=0x7f09000d;
         public static final int button1=0x7f090002;
         public static final int childButton=0x7f090004;
+        public static final int childPinEnter=0x7f090007;
         public static final int childTextView=0x7f090005;
-        public static final int chore_tracker_home_tab_id=0x7f090008;
-        public static final int chore_tracker_rewards_tab_id=0x7f09000a;
+        public static final int child_List=0x7f090008;
+        public static final int chore_tracker_home_tab_id=0x7f09000a;
+        public static final int chore_tracker_rewards_tab_id=0x7f09000c;
         public static final int container=0x7f090000;
-        public static final int logoff=0x7f09000c;
-        public static final int pager=0x7f090007;
+        public static final int logoff=0x7f09000e;
+        public static final int pager=0x7f090009;
         public static final int parentButton=0x7f090003;
-        public static final int parentPinEnter=0x7f090009;
+        public static final int parentPinEnter=0x7f09000b;
         public static final int parentTextView=0x7f090006;
         public static final int textView1=0x7f090001;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int authentication_layout=0x7f030001;
-        public static final int chore_tracker_calendar=0x7f030002;
-        public static final int chore_tracker_home=0x7f030003;
-        public static final int chore_tracker_rewards=0x7f030004;
-        public static final int fragment_main=0x7f030005;
-        public static final int home_tab_view=0x7f030006;
-        public static final int parent_logon_view=0x7f030007;
-        public static final int rewards_tab_view=0x7f030008;
+        public static final int child_logon_view=0x7f030002;
+        public static final int child_selection_view=0x7f030003;
+        public static final int chore_tracker_calendar=0x7f030004;
+        public static final int chore_tracker_home=0x7f030005;
+        public static final int chore_tracker_rewards=0x7f030006;
+        public static final int fragment_main=0x7f030007;
+        public static final int home_tab_view=0x7f030008;
+        public static final int parent_logon_view=0x7f030009;
+        public static final int rewards_tab_view=0x7f03000a;
     }
     public static final class menu {
         public static final int main=0x7f080000;

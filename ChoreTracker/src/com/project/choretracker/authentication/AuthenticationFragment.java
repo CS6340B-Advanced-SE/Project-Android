@@ -3,6 +3,7 @@ package com.project.choretracker.authentication;
 import com.project.choretracker.R;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.HapticFeedbackConstants;
@@ -46,15 +47,23 @@ public class AuthenticationFragment extends Fragment{
 	
 	public void onParentClicked( View v ) {
 		Log.i("AuthenticatinoFragment", "in onParentClicked");
-		
+
 		v.performHapticFeedback( HapticFeedbackConstants.LONG_PRESS, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING );
-		//TODO Load activity with new view
-		
 		getActivity().setContentView( R.layout.parent_logon_view );
-		ParentAuthenticationFragment parentFrag = new ParentAuthenticationFragment();
-		getActivity().getFragmentManager().beginTransaction().add( parentFrag, "parentAuth" ).commit();
+		ParentAuthenticationFragment fragment = new ParentAuthenticationFragment();
+		getActivity().getFragmentManager().beginTransaction().add( fragment, "parentAuthFragment" ).commit();
 
 		Log.i("AuthenticatinoFragment", "exiting onParentClicked");
+	}
+	
+	public void onChildClicked ( View v ) {
+		Log.i("AuthenticatinoFragment", "in onChildClicked");
+		
+		v.performHapticFeedback( HapticFeedbackConstants.LONG_PRESS, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING );
+		Intent intent = new Intent( getActivity(), ChildListActivity.class );
+		startActivity( intent );
+
+		Log.i("AuthenticatinoFragment", "exiting onChildClicked");
 	}
 	
 }

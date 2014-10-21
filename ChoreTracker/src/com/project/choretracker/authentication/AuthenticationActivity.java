@@ -37,4 +37,8 @@ public class AuthenticationActivity extends FragmentActivity {
 	public void onParentClicked( View v ) {
 		authFrag.onParentClicked( v );
 	}
+	
+	public void onChildClicked( View v ) {
+		authFrag.onChildClicked( v );
+	}
 }

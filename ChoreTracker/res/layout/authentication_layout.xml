@@ -42,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/button1"
+        android:onClick="onChildClicked"
         android:src="@android:drawable/btn_star" />
 
 	<TextView
